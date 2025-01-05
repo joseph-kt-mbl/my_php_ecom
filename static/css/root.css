@@ -1,0 +1,197 @@
+button{
+  cursor: pointer;
+}
+.root-wrapper {
+  width: 100%;
+  background-color: hsla(0, 0%, 0%, 0.896);
+  margin-top: 71px;
+}
+.small-screen-root{
+  margin-top: 220px;
+}
+
+.root-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.root-grid .black_mask_container {
+  grid-column: span 4 / span 4;
+  position: relative;
+  background-color: #050404;
+}
+
+.black_mask {
+  position: relative;
+  margin: auto;
+  overflow: hidden; /* Ensures child elements stay within the bounds */
+  width: 735px;
+}
+
+.black_mask .mask {
+  position: absolute;
+  background-color: rgba(6, 6, 6, 0.726);
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensures the mask covers the entire width of its container */
+  height: 100%; /* Ensures the mask covers the entire height of its container */
+}
+
+.black_mask .on-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 12px;
+  font-family: "Poppins";
+  z-index: 999;
+  color: aliceblue;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.black_mask .on-top h1 {
+  font-size: 4.2em;
+}
+
+.black_mask .on-top p {
+  font-size: 1.2em;
+}
+
+.black_mask img {
+  width: 100%; /* Ensures the image fits within its container */
+  height: 100%; /* Maintains full coverage */
+}
+
+.first_object{
+  width: 400px;
+  height: auto;
+  position: absolute;
+  bottom: 1rem;
+  left: -160px;
+  z-index: 99;
+}
+.first_object , .second_object{
+  opacity: 80%;
+}
+
+.second_object{
+  width: 460px;
+  position: absolute;
+  top: -.5rem;
+  right: 110px;
+  z-index: 99;
+  transform: scale(-1);
+}
+.second_object img{
+  width: 100%;
+  height: auto;
+}
+/* Responsive Styles */
+@media screen and (max-width: 480px) {
+  .black_mask {
+    width: 100%;
+    max-width: 450px;
+  }
+  .black_mask .mask {
+    width: 100%; /* Fully responsive for smaller screens */
+    height: 100%;
+  }
+  .black_mask .on-top h1 {
+    font-size: 1.4em;
+  }
+  .black_mask .on-top {
+    padding: 8px;
+  }
+  .first_object,
+  .second_object {
+    transform: scale(0.39);
+    opacity: 0.8; /* Reduced visibility */
+  }
+  .first_object{
+    bottom: 3rem;
+    left: 20px;
+  }
+  .second_object{
+    top: 5.5rem;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .black_mask {
+    width: 90%;
+    max-width: 480px;
+  }
+  .black_mask .mask {
+    width: 100%;
+    height: 100%;
+  }
+  .black_mask .on-top h1 {
+    font-size: 1.6em;
+  }
+  .black_mask .on-top {
+    padding: 10px;
+  }
+  .first_object {
+    transform: scale(0.5);
+    opacity: 0.6; /* Reduced visibility */
+  }
+  .second_object {
+    transform: scale(0.5) rotate(0deg); /* Adjusted scaling and removed initial transform */
+    opacity: 0.6; /* Reduced visibility */
+    right: -99px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .black_mask {
+    width: 80%;
+    max-width: 735px;
+  }
+  .black_mask .mask {
+    width: 100%;
+    height: 100%;
+  }
+  .black_mask .on-top h1 {
+    font-size: 2em;
+  }
+  .black_mask .on-top {
+    padding: 12px;
+  }
+  .first_object,
+  .second_object {
+    transform: scale(0.7); /* Slightly larger for medium screens */
+    opacity: 0.7; /* Reduced transparency */
+  }
+  .second_object{
+    right: -69px;
+  }
+
+}
+
+@media screen and (min-width: 1025px) {
+  .black_mask {
+    width: 735px;
+  }
+  .black_mask .mask {
+    width: 100%; /* Matches the width of the parent */
+    height: 100%; /* Matches the height of the parent */
+  }
+  .black_mask .on-top h1 {
+    font-size: 2.2em;
+  }
+  .black_mask .on-top {
+    padding: 12px;
+  }
+  .first_object,
+  .second_object {
+    transform: scale(1); /* Full size */
+    opacity: 0.8; /* Default opacity */
+  }
+}

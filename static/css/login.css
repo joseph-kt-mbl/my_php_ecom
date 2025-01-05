@@ -1,0 +1,155 @@
+/* Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.auth-form{
+    margin-top: 71px;
+    height: calc(100vh - 71px);
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.auth-form *{
+  font-family: "Poppins";
+}
+
+.container {
+    background: rgba(13, 13, 13, 0.813);
+    border-radius: 12px;
+    border: 1px solide #e6b207 !important;
+  height: 60vh;
+  min-width: 400px;
+  max-width: 600px; /* Limit container width for smaller screens */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+}
+.container h2{
+    color: aliceblue;
+}
+
+
+
+
+.input-field {
+  margin-bottom: 1.5rem;
+}
+
+
+.input-field input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #ffffff;
+  color: #ffffff;
+  outline: none;
+  font-size: 1rem;
+  width: 100%;
+  padding: 0.5rem 0;
+  transition: border-bottom 0.3s;
+}
+
+.input-field input:focus {
+  border-bottom: 2px solid #ffc107; /* Yellow focus effect */
+}
+
+.input-field {
+    position: relative;
+}
+.input-field img{
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.auth-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    width: 100%;
+}
+
+.auth-details div{
+    width: 80%;
+}
+
+.login-signup{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/* Button Styles */
+.signup-form [type="submit"],
+.login-form button {
+  background-color: #ffc107; /* Yellow button */
+  color: #121212; /* Dark text on yellow button */
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
+
+.errormsg p {
+  color: #ff6b6b; /* Red for error messages */
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+.green-text{
+  color: #08f25e;
+}
+
+/* Links */
+.auth-form a {
+  color: #ffc107; /* Yellow links */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-form a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%; /* Reduce container width for smaller screens */
+  }
+}
+
+
+.signup-form{
+    padding-top: 10vh;
+    align-items: flex-start;
+    height: 120vh !important;
+}
+.signup-form .auth-details{
+  gap: 1rem;
+}
+.signup-form .input-field{
+    height: 45px;
+}
+.signup-form .input-field input{
+    height: 100%;
+}
+.signup-form .input-field small{
+    position: absolute;
+    bottom: -1.75rem;
+    left: 0;
+    color: rgb(184, 184, 184);
+}
+.signup-form .container{
+    height: 80%;
+}
